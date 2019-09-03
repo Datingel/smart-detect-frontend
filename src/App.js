@@ -113,55 +113,27 @@ class App extends React.Component {
     this.setState({route: route});
   };
 
-  //   render() {
-  //     const {isSignedIn, imgUrl, route, box} = this.state;
-  //     return (
-  //       <div className='App'>
-  //         <Particles className='particles' params={particleOptions} />
-
-  //         <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn} />
-  //         {route === 'home' ? (
-  //           <div>
-  //             <Logo />
-  //             <Rank name={this.state.user.name} entries={this.state.user.entries} />
-  //             <ImageLinkForm
-  //               onInputChange={this.onInputChange}
-  //               onSubmitButton={this.onSubmitButton}
-  //             />
-  //             <FaceRecognition imgUrl={imgUrl} box={box} />
-  //           </div>
-  //         ) : route === 'signin' ? (
-  //           <SignIn onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
-  //         ) : (
-  //           <Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
-  //         )}
-  //       </div>
-  //     );
-  //   }
-  // }
-
-  // export default App;
-
   render() {
-    const {isSignedIn, imageUrl, route, box} = this.state;
+    const {isSignedIn, imgUrl, route, box} = this.state;
     return (
       <div className='App'>
         <Particles className='particles' params={particleOptions} />
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+
+        <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn} />
         {route === 'home' ? (
           <div>
             <Logo />
             <Rank name={this.state.user.name} entries={this.state.user.entries} />
             <ImageLinkForm
               onInputChange={this.onInputChange}
-              onButtonSubmit={this.onButtonSubmit}
+              onSubmitButton={this.onSubmitButton}
             />
-            <FaceRecognition box={box} imageUrl={imageUrl} />
+            <FaceRecognition imgUrl={imgUrl} box={box} />
           </div>
         ) : route === 'signin' ? (
-          <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+          <SignIn onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
         ) : (
-          <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+          <Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
         )}
       </div>
     );
