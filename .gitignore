@@ -1,9 +1,5 @@
 node_modules
 
-#production 
-
-build
-
 #lock json
 
 package-lock.json
