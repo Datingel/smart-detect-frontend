@@ -14,7 +14,6 @@ The App will detect the face of the uploaded image and give you a response to it
 
 * [REACT](https://reactjs.org/)
 * [Tachyons](https://tachyons.io/)
-* [Netlify](https://www.netlify.com/)
 * [Heroku](https://www.heroku.com/)
 * [NodeJS + Express](https://nodejs.org/en/)
 * [Postgres](https://www.postgresql.org/)
